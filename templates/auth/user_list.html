@@ -1,0 +1,16 @@
+<h1>Usuarios</h1>
+<ul>
+{% for user in object_list %}
+    <li>{{ user.username }} -------- Es staff: 
+
+		{% if user.is_staff %}
+			Si
+		{% else %}
+			No
+		{% endif %}
+
+	</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

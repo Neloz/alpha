@@ -1,0 +1,195 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Demo Banco</title>
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS -->
+  <link rel="stylesheet" href="dist/css/trust.css">
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-1 shadow-sm">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Banco Pacífico</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Buscar">
+    <ul class=" navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Cerrar Sesión</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">
+                <i class="far fa-home mr-2"></i>
+                <span data-feather="home"></span>
+                Inicio
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="directorio.html">
+                <i class="far fa-address-book mr-2"></i>
+                <span data-feather="file"></span>
+                Directorio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="far fa-cog mr-2"></i>
+                <span data-feather="users"></span>
+                Ajustes
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="detalle" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-start flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+          <a class="btn rounded-circle btn-primary" href="index.html">
+            <i class="far fa-arrow-left mt-1"></i>
+          </a>
+          <div class="d-flex align-items-start flex-column">
+            <h2 class="mt-2 ml-3">Detalle Solicitud</h2>
+            <div>
+              <span class="badge badge-pendiente ml-3">Pendiente</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Tarjeta-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="card col-4 bg-light card-detalle">
+              <div class="col-12">
+                <h5 class="mt-4 mb-4 lead d-inline-block">Descripción</h5>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-6 col-form-label">Tipo de Documento</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control-plaintext" value="Transferencia">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-6 col-form-label">Momento</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control-plaintext" value="Hoy, 10:42 hrs.">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-6 col-form-label">Localización</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control-plaintext" value="Valparaíso">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-6 col-form-label">Usuario a cargo</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control-plaintext" value="Germán Torres">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-6 col-form-label">Número de cuenta</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control-plaintext" value="5620567933">
+                  </div>
+                </div>
+
+                <a class="btn btn-primary btn-sm w-100 mt-3 mb-3" data-toggle="modal" data-target="#exampleModal">Ver Documento</a>
+
+                <!--Modal-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <!--MAPA-->
+            <div class="col-8">
+              <div class="mapa" id="map" style="height:288px;"></div>
+            </div>
+          </div>
+
+          <div class="text-center mt-5">
+            <button class="btn btn-rechazar btn-sm mt-3 mb-3 mr-1">Rechazar</button>
+            <button class="btn btn-autorizar btn-sm mt-3 mb-3 ml-1 alert-success" id="mensaje-1">Autorizar</button>
+          </div>
+
+          <!-- Alert trigger -->
+          <div id="alert-success" class="alert alert-primary alert-top shadow" role="alert">
+            Autorización realizada de manera exitosa.
+          </div>
+
+
+        </div>
+    </div>
+
+
+
+    </main>
+
+
+
+  </div>
+  </div>
+
+
+  <!-- Javascript core -->
+  <script src="dist/scripts/jquery.min.js"></script>
+  <script src="dist/scripts/popper.min.js"></script>
+  <script src="dist/scripts/bootstrap.min.js"></script>
+  <!-- Alert -->
+  <script src="dist/scripts/alert-top.js"></script>
+
+  <!--Mapa-->
+  <script>
+      var map;
+
+      function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: {
+                  lat: -33.0389679,
+                  lng: -71.6289942
+              },
+              zoom: 17
+          });
+      }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap" type="text/javascript"></script>
+
+
+</body>
+
+</html>
