@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Usuarios</h1>
+	<div class="articles">
+		{% for Usuarios in Usuarios %}
+		<div class="article">
+			<h2><a href="{% url 'detail' slug=article.slug %} ">{{Usuarios.title}}</a></h2>
+			<p>{{ Usuarios.body }}</p>
+
+		{% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+  {% block content %}
+  <h2>Personas</h2>
+<em>Persona</em>
+<ul>
+    {% for persona in object_list %}
+      <li>{{ persona.title }}</li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
