@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <rect id="Rectangle-5-Copy" fill="#EFF7FA" x="0" y="0" width="300" height="300"></rect>
+            <g id="if_User_Avatar_176688" transform="translate(40.000000, 40.000000)">
+                <rect id="Rectangle-path" x="0" y="0" width="221" height="221"></rect>
+                <path d="M207.1875,172.65625 L207.1875,186.46875 C207.1875,201.724656 194.818406,207.1875 179.5625,207.1875 L48.34375,207.1875 C33.0878438,207.1875 20.71875,201.724656 20.71875,186.46875 L20.71875,172.65625 C20.71875,147.850295 60.9558574,133.734352 89.2753672,127.752244 C96.7077871,144.019484 113.939744,158.84375 113.939744,158.84375 C113.939744,158.84375 131.191988,144.026391 138.610596,127.752244 C166.937012,133.734352 207.1875,147.850295 207.1875,172.65625 Z M113.953125,13.8125 C82.875,13.8125 64.9485332,31.7527793 69.6560059,68.7793437 C75.0718008,111.363281 96.6875,124.3125 113.953125,124.3125 C131.21875,124.3125 152.834449,111.363281 158.250244,68.7793437 C162.957717,31.7527793 145.03125,13.8125 113.953125,13.8125 Z" id="Shape" fill="#BED6E0" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
