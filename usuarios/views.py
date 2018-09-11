@@ -1,4 +1,3 @@
-import json
 import urllib.request
 import requests
 from django.shortcuts import render, redirect, get_object_or_404
