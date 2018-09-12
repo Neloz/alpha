@@ -9,32 +9,35 @@
     <meta name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static "css/trust.css" %}">
+    <link rel="stylesheet" href="{% static 'css/trust.css' %}">
 </head>
 
 <body class="body-login">
     <div class="card col-3 mx-auto shadow-sm p-0 mt-5">
         <div class="card-header">
-            <img class="logo-login" src="{% static "images/logo_banco_pacifico.svg" %}" alt="">
+            <img class="logo-login" src="{% static 'img/logos/logo_banco_pacifico.svg' %}" alt="">
         </div>
         <form class="p-4 mt-5" action="http://127.0.0.1:8000/accounts/login/" method="POST">
-          {% csrf_token %}
+
+            {% csrf_token %}
             <div class="form-group">
                 <label for="exampleInputEmail1">Correo electrónico</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"
-                    placeholder="example@yahoo.com">
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                    placeholder="Pone el mail">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Y la clave">
                 <a class="d-flex flex-row-reverse mt-1" href="">Olvidé mi contraseña</a>
             </div>
             <input type="submit" class="btn btn-primary btn-sm w-100 mt-5 mb-4" value="Ingresar">
-            <!--<a type="submit" class="btn btn-primary btn-sm w-100 mt-5 mb-4">Ingresar</a>-->
         </form>
         <div class="text-center mb-3">
             <p>Verified by</p>
-            <img class="logo-chico" src="{% static "images/logo_trust.svg" %}" alt="">
+
+            <img class="logo-chico" src="{% static 'img/logos/logo_trust.svg' %}" alt="">
+
+
         </div>
 
 

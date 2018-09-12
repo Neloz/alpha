@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="es">
+<html class="no-js" lang="en">
 {% load static %}
 
 <head>
@@ -9,13 +9,15 @@
   <meta name="description">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSS -->
-  <link rel="stylesheet" href="{% static 'css/trust.css' %}">
+  <link rel="stylesheet" href="{% static "css/trust.css" %}">
+  <link rel="stylesheet" href="{% static "css/shards.css" %}">
 </head>
 
 <body>
   <!--Navbar-->
   <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-1 shadow-sm">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Banco Pacífico</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img class="logo-banco" src="{% static "images/logo_banco_pacifico.svg" %}"
+        alt=""></a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Buscar">
     <ul class=" navbar-nav px-3">
       <li class="nav-item text-nowrap">
@@ -37,10 +39,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="directorio.html">
-                <i class="far fa-address-book mr-2"></i>
-                <span data-feather="file"></span>
-                Directorio
+              <a class="nav-link" href="notificaciones">
+                <i class="far fa-bell mr-2"></i>
+                <span data-feather="users"></span>
+                Notificaciones
               </a>
             </li>
             <li class="nav-item">
@@ -55,224 +57,183 @@
       </nav>
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-          <h1>Autorizaciones</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-              <button class="btn btn-sm btn-outline-secondary active">Todos</button>
-              <button class="btn btn-sm btn-outline-secondary">Pendientes</button>
-              <button class="btn btn-sm btn-outline-secondary">Autorizados</button>
-            </div>
-            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <span data-feather="calendar"></span>
-              This week
-            </button>
-          </div>
-        </div>
+        <div class="container">
+          <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h1>Autorizaciones</h1>
 
-        <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-              <tr style="background-color: #f3f3f3">
-                <th>Tipo de Documento</th>
-                <th>Momento</th>
-                <th>Localización</th>
-                <th>Usuario a cargo</th>
-                <th>Número de cuenta</th>
-                <th>Estado</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-transfer">Transferencia</span>
-                </td>
-                <td>Hoy, 10:42 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Germán Torres</td>
-                <td>5620567933</td>
-                <td class="mt-2">
-                  <span class="badge badge-pendiente">Pendiente</span>
-                </td>
-                <td>
-                  <a href="detalle.html">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-seguro">Seguro</span>
-                </td>
-                <td>Hoy, 09:46 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Alicia Mercadal</td>
-                <td>6934562572</td>
-                <td class="mt-2">
-                  <span class="badge badge-autoriz">Autorizado</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-credito">Crédito</span>
-                </td>
-                <td>Hoy, 09:33 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Carlos Fernández</td>
-                <td>7823611457</td>
-                <td class="mt-2">
-                  <span class="badge badge-pendiente">Pendiente</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-transfer">Transferencia</span>
-                </td>
-                <td>Hoy, 09:32 hrs.</td>
-                <td>Viña del Mar</td>
-                <td>Antonia González</td>
-                <td>9457254317</td>
-                <td class="mt-2">
-                  <span class="badge badge-pendiente">Pendiente</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-transfer">Transferencia</span>
-                </td>
-                <td>Ayer, 13:42 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Adolfo Hicks</td>
-                <td>8305626544</td>
-                <td class="mt-2">
-                  <span class="badge badge-autoriz">Autorizado</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-credito">Crédito</span>
-                </td>
-                <td>Ayer, 13:38 hrs.</td>
-                <td>Viña del Mar</td>
-                <td>Florentino Baeza</td>
-                <td>8356245176</td>
-                <td class="mt-2">
-                  <span class="badge badge-pendiente">Pendiente</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-transfer">Transferencia</span>
-                </td>
-                <td>Ayer, 13:03 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Carmen Sepúlveda</td>
-                <td>7835234503</td>
-                <td class="mt-2">
-                  <span class="badge badge-pendiente">Pendiente</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-seguro">Seguro</span>
-                </td>
-                <td>Ayer, 12:42 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Germán Torres</td>
-                <td>8356267803</td>
-                <td class="mt-2">
-                  <span class="badge badge-autoriz">Autorizado</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-credito">Crédito</span>
-                </td>
-                <td>Ayer, 11:58 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Alicia Mercadal</td>
-                <td>6831634792</td>
-                <td class="mt-2">
-                  <span class="badge badge-autoriz">Autorizado</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-transfer">Transferencia</span>
-                </td>
-                <td>Ayer, 11:24 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Marisol Orrego</td>
-                <td>9365925115</td>
-                <td class="mt-2">
-                  <span class="badge badge-pendiente">Pendiente</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="mt-2">
-                  <span class="badge badge-seguro">Seguro</span>
-                </td>
-                <td>Ayer, 10:42 hrs.</td>
-                <td>Valparaíso</td>
-                <td>Germán Torres</td>
-                <td>5620567933</td>
-                <td class="mt-2">
-                  <span class="badge badge-autoriz">Autorizado</span>
-                </td>
-                <td>
-                  <a href="#">
-                    <i class="far fa-chevron-right"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="d-flex justify-content-between mt-4">
+              <div class="notif-area col-md-9">
+                <div class="Message card-notification" id="js-timer">
+                  <div class="Message-icon autoriz">
+                    <i class="far fa-check"></i>
+                  </div>
+                  <div class="Message-body">
+                    <p>Tu solicitud ha sido autorizada</p>
+                  </div>
+                  <a href="detalle"><i class="far fa-chevron-right see-more"></i></a>
+                </div>
+                <div class="Message card-notification" id="js-timer">
+                  <div class="Message-icon rechazado">
+                    <i class="far fa-times"></i>
+                  </div>
+                  <div class="Message-body">
+                    <p>Tu solicitud ha sido rechazada</p>
+                  </div>
+                  <a href="detalle"><i class="far fa-chevron-right see-more"></i></a>
+                </div>
+              </div>
+
+              <div>
+                <a type="button" href="subir_documento.html" class="btn btn-plus btn-circle btn-xl" data-toggle="modal"
+                  data-target="#modal_subir" data-whatever="@mdo"><i class="far fa-plus mt-2"></i>
+                </a>
+              </div>
+              <!--Modal-->
+              <div class="modal fade" id="modal_subir" tabindex="-1" role="dialog" aria-labelledby="modal_subir"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title" id="modal_subir">Cargar Documento</h2>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group row">
+                          <label for="inputPassword" class="col-sm-2 col-form-label">Seleccionar Admin</label>
+                          <div class="col-sm-10">
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>Selecciona...</option>
+                              <option value="1">Fernando Astorga</option>
+                              <option value="2">Vicente Larraguibel</option>
+                              <option value="3">Marcela Castro</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputPassword" class="col-sm-2 col-form-label">Tipo</label>
+                          <div class="col-sm-10">
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>Selecciona...</option>
+                              <option value="1">Transferencia</option>
+                              <option value="2">Seguro</option>
+                              <option value="3">Crédito</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">Descripción:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <label for="inputPassword" class="col-sm-2 col-form-label">Cargar Documento</label>
+                          </div>
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Examinar</label>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Enviar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h2>Enviadas</h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary active">Todos</button>
+                <button class="btn btn-sm btn-outline-secondary">Pendientes</button>
+                <button class="btn btn-sm btn-outline-secondary">Autorizados</button>
+              </div>
+              <div>
+                <input type="text" class="form-control date-select" id="datepicker-example" placeholder="Selecciona Fecha">
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr style="background-color: #f3f3f3">
+                  <th>Tipo de Documento</th>
+                  <th>Momento</th>
+                  <th>Localización</th>
+                  <th>Usuario a cargo</th>
+                  <th>Número de cuenta</th>
+                  <th>Estado</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mt-2">
+                    <span class="badge badge-transfer">Transferencia</span>
+                  </td>
+                  <td>Hoy, 10:42 hrs.</td>
+                  <td>Valparaíso</td>
+                  <td>Germán Torres</td>
+                  <td>5620567933</td>
+                  <td class="mt-2">
+                    <span class="badge badge-pendiente">Pendiente</span>
+                  </td>
+                  <td>
+                    <a href="detalle.html">
+                      <i class="far fa-chevron-right"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mt-2">
+                    <span class="badge badge-seguro">Seguro</span>
+                  </td>
+                  <td>Hoy, 09:46 hrs.</td>
+                  <td>Valparaíso</td>
+                  <td>Alicia Mercadal</td>
+                  <td>6934562572</td>
+                  <td class="mt-2">
+                    <span class="badge badge-autoriz">Autorizado</span>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="far fa-chevron-right"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mt-2">
+                    <span class="badge badge-credito">Crédito</span>
+                  </td>
+                  <td>Hoy, 09:33 hrs.</td>
+                  <td>Valparaíso</td>
+                  <td>Carlos Fernández</td>
+                  <td>7823611457</td>
+                  <td class="mt-2">
+                    <span class="badge badge-pendiente">Pendiente</span>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="far fa-chevron-right"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </main>
 
@@ -282,9 +243,17 @@
 
 
   <!-- Javascript core -->
-  <script src="{% static 'scripts/jquery.min.js' %}"></script>
-  <script src="{% static 'scripts/popper.min.js' %}"></script>
-  <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+  <script src="{% static "scripts/jquery.min.js" %}"></script>
+  <script src="{% static "scripts/popper.min.js" %}"></script>
+  <script src="{% static "scripts/bootstrap.min.js" %}"></script>
+
+  <script src="{% static "scripts/shards.js" %}"></script>
+
+  <script>
+    $('#datepicker-example').datepicker({});
+  </script>
+
+
 
 </body>
 

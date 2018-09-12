@@ -1,3 +1,4 @@
+import json
 import urllib.request
 import requests
 from django.shortcuts import render, redirect, get_object_or_404
@@ -33,10 +34,7 @@ class LoginIn(TemplateView):
 				request.session['status'] = 'unauthorizated'
 				return render(request, self.template_name, {'form':form})
 
-		#args = {'form': form, 'text':text}
-
 		return redirect('home')
-		#return HttpResponse(r.headers['Host'])
 
 def logout(request):
 	template_name = 'usuarios/login.html'

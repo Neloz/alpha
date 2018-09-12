@@ -18,3 +18,6 @@ def home(request):
             )
     else:
         return redirect('accounts/login')
+
+def detalles(request):
+    template_name = 'detalle.html'
