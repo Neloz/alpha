@@ -9,7 +9,7 @@ class Users(models.Model):
 		return self.title
 
 
-class Trans(models.Model):
+class Tran(models.Model):
 	tipo = models.CharField(max_length=20)
 	date = models.DateTimeField()
 	lugar = models.CharField(max_length=30)

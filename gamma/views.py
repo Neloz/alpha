@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from usuarios.models import Trans
+from usuarios.models import Tran
 
 def home(request):
     template_name = 'index.html'
     if 'status' in request.session:
         if request.session['status']=='success':
-            trans = Trans.objects.all()
+            trans = Tran.objects.all()
             contex = {'trans':trans}
             return render(request, template_name, contex)
         else:

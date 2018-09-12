@@ -156,9 +156,9 @@
             <h2>Enviadas</h2>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary active">Todos</button>
-                <button class="btn btn-sm btn-outline-secondary">Pendientes</button>
-                <button class="btn btn-sm btn-outline-secondary">Autorizados</button>
+                <button class="btn btn-sm btn-outline-secondary active" id="todos">Todos</button>
+                <button class="btn btn-sm btn-outline-secondary" id="pendientes">Pendientes</button>
+                <button class="btn btn-sm btn-outline-secondary" id="autoriz">Autorizados</button>
               </div>
               <div>
                 <input type="text" class="form-control date-select" id="datepicker-example" placeholder="Selecciona Fecha">
@@ -202,7 +202,7 @@
                     {% elif trans.status == 'Autorizado' %}
                     <span class="badge badge-autoriz">{{ trans.status }}</span>
                     {% else %}
-                    <span class="badge badge-pendiente">{{ trans.status }}</span>
+                    <span class="badge badge-rechazado">{{ trans.status }}</span>
                     {% endif %}
                   </td>
                   <td>
@@ -230,6 +230,7 @@
   <script src="{% static "scripts/bootstrap.min.js" %}"></script>
 
   <script src="{% static "scripts/shards.js" %}"></script>
+  <script src="{% static "scripts/filter.js" %}"></script>
 
   <script>
     $('#datepicker-example').datepicker({});
