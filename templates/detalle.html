@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
+{% load static %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,18 +8,18 @@
   <meta name="description">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSS -->
-  <link rel="stylesheet" href="../dist/css/trust.css">
+  <link rel="stylesheet" href="{% static 'css/trust.css' %}">
 </head>
 
 <body>
   <!--Navbar-->
   <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-1 shadow-sm">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img class="logo-banco" src="../dist/images/logo_banco_pacifico.svg"
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img class="logo-banco" src="{% static 'images/logo_banco_pacifico.svg' %}"
         alt=""></a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Buscar">
     <ul class=" navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="login.html">Cerrar Sesión</a>
+        <a class="nav-link" href="../accounts/logout">Cerrar Sesión</a>
       </li>
     </ul>
   </nav>
@@ -29,14 +29,14 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="../">
                 <i class="far fa-home mr-2"></i>
                 <span data-feather="home"></span>
                 Inicio
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="notificaciones.html">
+              <a class="nav-link active" href="#">
                 <i class="far fa-bell mr-2"></i>
                 <span data-feather="users"></span>
                 Notificaciones
@@ -57,7 +57,7 @@
       <main role="detalle" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="container">
         <div class="d-flex justify-content-start flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-          <a class="btn rounded-circle btn-primary" href="notificaciones.html">
+          <a class="btn rounded-circle btn-primary" href="../">
             <i class="far fa-arrow-left mt-1"></i>
           </a>
           <div class="d-flex align-items-start flex-column">
@@ -163,9 +163,9 @@
 
 
   <!-- Javascript core -->
-  <script src="../dist/scripts/jquery.min.js"></script>
-  <script src="../dist/scripts/popper.min.js"></script>
-  <script src="../dist/scripts/bootstrap.min.js"></script>
+  <script src="{% static 'scripts/jquery.min.js' %}"></script>
+  <script src="{% static 'scripts/popper.min.js' %}"></script>
+  <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
 
 
   <!--Mapa-->
