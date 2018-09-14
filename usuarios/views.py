@@ -23,7 +23,7 @@ class LoginIn(TemplateView):
 			#text = []
 			text = form.data
 			#text = json.dumps(text)
-			r = requests.post('http://192.168.2.132:8050/api/login', data=text)
+			r = requests.post('http://192.168.2.133:8050/api/login', data=text)
 			python_obj = json.loads(r.text)
 
 			if r.status_code == 200:
@@ -32,7 +32,13 @@ class LoginIn(TemplateView):
 				request.session['status'] = python_obj['status']
 			else:
 				request.session['status'] = 'unauthorizated'
-				return render(request, self.template_name, {'form':form})
+				var = True
+				return render(request, self.template_name, {'form':form, 'var':var})
+
+		else:
+			request.session['status'] = 'unauthorizated'
+			var_session = 'unauthorizated'
+			return render(request, self.template_name, {'form':form})
 
 		return redirect('home')
 

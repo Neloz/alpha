@@ -17,7 +17,12 @@
         <div class="card-header">
             <img class="logo-login" src="{% static "images/logo_banco_pacifico.svg" %}" alt="">
         </div>
-        <form class="p-4 mt-5" action="http://127.0.0.1:8000/accounts/login/" method="POST">
+        {% if var %}
+        <div class="p-4" style="color:#f00">
+          Tu contraseña está incorrecta
+        </div>
+        {% endif %}
+        <form class="p-4" action="http://127.0.0.1:8000/accounts/login/" method="POST">
           {% csrf_token %}
             <div class="form-group">
                 <label for="exampleInputEmail1">Correo electrónico</label>
