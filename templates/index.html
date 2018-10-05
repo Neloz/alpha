@@ -156,9 +156,9 @@
             <h2>Enviadas</h2>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary active" id="todos" value="todos">Todos</button>
-                <button class="btn btn-sm btn-outline-secondary" id="pendientes" value="pendiente">Pendientes</button>
-                <button class="btn btn-sm btn-outline-secondary" id="autoriz" value="autoriz">Autorizados</button>
+                <button class="btn btn-sm btn-outline-secondary filter-button active" id="todos" data-filter="todos" value="todos">Todos</button>
+                <button class="btn btn-sm btn-outline-secondary filter-button" id="pendientes" data-filter="pendientes" value="pendiente">Pendientes</button>
+                <button class="btn btn-sm btn-outline-secondary filter-button" id="autoriz" data-filter="autorizados" value="autoriz">Autorizados</button>
               </div>
               <div>
                 <input type="text" class="form-control date-select" id="datepicker-example" placeholder="Selecciona Fecha">
@@ -167,7 +167,7 @@
           </div>
 
           <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover" id="transactions_table">
               <thead>
                 <tr style="background-color: #f3f3f3">
                   <th>Tipo de Documento</th>
@@ -179,23 +179,23 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                {% if trans %}
-                {% for trans in trans %}
+              <tbody class="contenidobusqueda">
+                {% if trans.data %}
+                {% for trans in trans.data %}
                 <tr>
                   <td class="mt-2">
-                    {% if trans.tipo == 'Transferencia' %}
-                    <span class="badge badge-transfer">{{ trans.tipo }}</span>
-                    {% elif trans.tipo == 'Seguro' %}
-                    <span class="badge badge-seguro">{{ trans.tipo }}</span>
+                    {% if trans.type == 'transferencia' %}
+                    <span class="badge badge-transfer">{{ trans.type }}</span>
+                    {% elif trans.type == 'seguro' %}
+                    <span class="badge badge-seguro">{{ trans.type }}</span>
                     {% else %}
-                    <span class="badge badge-credito">{{ trans.tipo }}</span>
+                    <span class="badge badge-credito">{{ trans.type }}</span>
                     {% endif %}
                   </td>
                   <td>{{ trans.date }}</td>
-                  <td>{{ trans.lugar }}</td>
-                  <td>{{ trans.username }}</td>
-                  <td>{{ trans.n_cuenta }}</td>
+                  <td>{{ trans.localization }}</td>
+                  <td>{{ trans.user_name }}</td>
+                  <td>{{ trans.num_cta }}</td>
                   <td class="mt-2">
                     {% if trans.status == 'Pendiente' %}
                     <span class="badge badge-pendiente">{{ trans.status }}</span>

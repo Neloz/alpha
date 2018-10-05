@@ -43,10 +43,4 @@ class LoginIn(TemplateView):
 		return redirect('home')
 
 def logout(request):
-	template_name = 'usuarios/login.html'
-	form = LoginForm()
-	if request.session['status']=='success':
-		del request.session['status']
-		return render(request, template_name, {'form':form})
-	else:
-		return HttpResponse('no pasa nada')
+	return redirect('http://sso.trust.lat/oxauth/restv1/end_session')
